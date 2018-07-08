@@ -85,15 +85,3 @@ object BackTrackingSolution {
 }
 
 
-
-
-
-
-
-// result(xNext)(yNext) = moveNumber
-//                   if(findRoute(xNext, yNext, result, moveNumber+1)){
-//                      return true;
-//                   }
-//                   else{
-//                      result(xNext)(yNext) = -1
-//                   }  

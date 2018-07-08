@@ -3,7 +3,7 @@ import scala.collection.mutable._
 
 final class Cell(val x:Int, val y:Int);
 
-//this is heuristic approach based solution in combination with backtracking method.
+//This is optimized heuristic approach based solution.
 
 class PawnMove(val xStart: Int, val yStart: Int, val N: Int) {
    var x: Int = xStart
@@ -166,7 +166,7 @@ object PawnMoveHeuristic {
    def main(args: Array[String]) {
 
    	// pass the starting position of pawn & chequeboard size to PawnMove class instance	
-      val pt = new PawnMove(2, 2, 10);
+      val pt = new PawnMove(args(0).toInt, args(1).toInt, 10);
 
       pt.solve();
    }

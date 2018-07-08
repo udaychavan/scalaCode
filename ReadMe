@@ -1,0 +1,37 @@
+Hi,
+    I am submitting couple of solutions for given assignment. The pawn move problem is similar to finding out Hamiltonian path in a graph. Each cell represents a node in graph & allowed moves represent edges in graph.
+       
+    I started tackling this problem with backtracking solution. Which is a naive way of solving such problems. With this approach, finding out a path which visits each cell exactly once becomes much more harder, as the size of board increases. 
+    
+    After exploring backtracking solution, to solve given assignment, it was almost impossible to run the written program for 10*10 board. Then I have applied an algorithm to find out Hamiltonian path -  which basically considers the smallest degree node as the next node in the path. 
+ 
+In the heuristic solution, decision of next pawn move is taken as below.
+	1. Find out the nearest minimum degree cell/node which is not visited previously 
+	2. Consider this minimum degree cells (in any random order) as next move for pawn & proceed
+        3. If subsequent moves does not lead to the final solution then backtrack & select other nodes (having degree more than minimum degree at that stage).
+
+
+Notes to run the program:
+
+1. compile the program with scalac
+     scalac HeuristicSolution.scala
+
+2. run the program - provide 2 arguments while running, which is basically start position for pawn:
+     scala PawnMoveHeuristic <x> <y>
+
+
+Example:
+localadmins-MacBook-Pro-95:scalaCode uday.chavan$ scalac HeuristicSolution.scala
+localadmins-MacBook-Pro-95:scalaCode uday.chavan$ scala PawnMoveHeuristic 0 0
+Pawn visited all the cells in the board
+pawn move directions:
+0 45 79 1 46 84 22 47 87 21
+42 17 14 43 18 13 93 19 12 94
+78 2 40 85 80 48 86 83 23 57
+15 44 76 16 92 89 25 95 88 20
+41 34 81 64 59 82 98 58 11 99
+77 3 39 90 75 49 91 72 24 56
+30 65 60 33 97 63 26 96 53 7
+38 35 74 67 36 73 68 50 10 71
+61 4 29 62 5 28 54 6 27 55
+31 66 37 32 69 51 9 70 52 8
